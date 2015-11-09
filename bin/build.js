@@ -51,7 +51,7 @@
 
   process.env.PATH = DEPOT_TOOLS_DIR + ':' + process.env.PATH;
   process.env.GYP_GENERATORS = NINJA;
-  process.env.GYP_DEFINES = ('host_arch=' + HOST_ARCH + ' target_arch=' + TARGET_ARCH);
+  process.env.GYP_DEFINES = ('host_arch=' + HOST_ARCH + ' target_arch=' + TARGET_ARCH + '-march=armv7-a -marm  -mthumb-interwork -mfloat-abi=hard -mfpu=neon-vfpv4 -mtune=cortex-a7');
 
   function spawn_log(cmd, args, opts, nextstep) {
     if (arguments.length == 3) {
